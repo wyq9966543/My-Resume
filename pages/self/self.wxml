@@ -1,0 +1,23 @@
+
+<view class="jcs_box">
+  <view class="self_container ">
+    <view class='self_info'>
+          <view class='self_img'>
+          <image src='https://i.loli.net/2020/06/20/aHEBvOJi2KF169m.jpg'></image>
+          </view>
+          <view class="cover-info">
+            <view class='self_name'>温涌乾</view>
+            <view class='self_job'>前端工程师</view>
+            <view class='self_desc'>立志欲坚不欲锐，成功在久不在速</view>
+          </view>
+          <view class='self_icon'>
+          <image src='/img/wx.png' bindtap='wx_click'
+          data-index='0'></image>
+          <image src='/img/qq.png' bindtap='wx_click'
+          data-index="1"> </image>
+          <image src='/img/GitHub.png' bindtap='wx_click'
+          data-index="2"> </image>
+          </view> 
+    </view> 
+  </view>
+</view>

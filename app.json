@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/self/self"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "My Resume",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#000",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的简历",
+        "iconPath": "./img/bg.png",
+        "selectedIconPath": "./img/bg-active.png"
+      },
+      {
+        "pagePath": "pages/self/self",
+        "text": "联系我",
+        "iconPath": "./img/contact.png",
+        "selectedIconPath": "./img/contact-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
