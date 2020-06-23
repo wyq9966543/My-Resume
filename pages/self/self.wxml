@@ -1,14 +1,14 @@
-
-<view class="jcs_box">
+<view class="ripple" style="{{rippleStyle}}"></view>
+<view class="jcs_box" bindtouchstart="containerTap">
   <view class="self_container ">
     <view class='self_info'>
           <view class='self_img'>
-          <image src='https://i.loli.net/2020/06/20/aHEBvOJi2KF169m.jpg'></image>
+          <image src='{{self_photo}}'></image>
           </view>
           <view class="cover-info">
-            <view class='self_name'>温涌乾</view>
-            <view class='self_job'>前端工程师</view>
-            <view class='self_desc'>立志欲坚不欲锐，成功在久不在速</view>
+            <view class='self_name'>{{self_name}}</view>
+            <view class='self_job'>{{self_job}}</view>
+            <view class='self_desc'>{{self_desc}}</view>
           </view>
           <view class='self_icon'>
           <image src='/img/wx.png' bindtap='wx_click'

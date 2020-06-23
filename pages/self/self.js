@@ -1,9 +1,24 @@
 // pages/self/self.js
 Page({
+  containerTap:function(res){
+    //console.log(res.touches[0]);
+    var x=res.touches[0].pageX;
+    var y=res.touches[0].pageY+85;
+    this.setData({
+      rippleStyle:''
+    });
+    this.setData({
+      rippleStyle:'top:'+y+'px;left:'+x+'px;-webkit-animation: ripple 0.4s linear;animation:ripple 0.4s linear;'
+    });
+  },
   /**
    * 页面的初始数据
    */
   data: {
+    self_name: '温涌乾',
+    self_job: '前端工程师',
+    self_desc: '立志欲坚不欲锐，成功在久不在速',
+    self_photo: 'https://i.loli.net/2020/06/20/aHEBvOJi2KF169m.jpg',
     erweima: ['https://i.loli.net/2020/06/20/AcfHTPGDWgZqzVx.jpg',
       'https://i.loli.net/2020/06/20/MvAFZ75SgmbCl26.jpg',
       'https://i.loli.net/2020/06/20/BowkAXQYHWnUpL9.png',
@@ -34,8 +49,23 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: async function () {
+    //初始化云数据库
+    const db = wx.cloud.database({
+      env: 'wyq9966543-gcf9c'
+    })
+    const selfInfo = db.collection('selfInfo')
+    //异步获取云端数据
+    var info = await selfInfo.get().then(res => {
+      // console.log(res)
+      return res.data[0]
+    })
+    this.setData({
+      self_name: info.self_name,
+      self_job: info.self_job,
+      self_desc: info.self_desc,
+      erweima: info.erweima
+    })
   },
 
   /**

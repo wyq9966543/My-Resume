@@ -1,8 +1,8 @@
 <!--pages/index/index.wxml-->
 <swiper style="height:{{height}}px">
   <!-- 封面页 -->
-  <swiper-item>
-    <image src="/img/me.png" class="photo" mode="widthFix"></image>
+  <swiper-item bindtouchstart="coverInfo">
+    <image src="{{photo}}" class="photo" mode="widthFix"></image>
     <view class="cover-info">
       <text class="cover-name">{{name}}</text>
       <text class="cover-spell">{{spell}}</text>
@@ -54,7 +54,7 @@
           <!-- 主要技能 -->
           <view class="skill" wx:for="{{skill}}" wx:key="item">
             <text class="skill-name">{{item.name}}</text>
-            <progress class="progress" percent="{{item.percent}}" stroke-width="5"></progress>
+            <progress active="true" class="progress" percent="{{item.percent}}"></progress>
           </view>
         </view>
         <view class="section">
